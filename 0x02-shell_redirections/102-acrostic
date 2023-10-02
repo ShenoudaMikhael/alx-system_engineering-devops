@@ -1,2 +1,2 @@
 #!/bin/bash
-sed 's/[[:space:]]+/\n/g'
+cut -c 1 | paste -s -d ''
