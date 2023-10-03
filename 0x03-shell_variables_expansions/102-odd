@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'NR % 2 == 1'
+grep -n '' | grep -E '^[[:digit:]]*[13579]:'| rev | cut -d ':' -f 1 | rev
