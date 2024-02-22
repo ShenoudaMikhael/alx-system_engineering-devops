@@ -16,5 +16,5 @@ do
     else
         echo "$v";
     fi;
-    ((v++));
+    $((v++));
 done;
