@@ -4,7 +4,7 @@ v=1;
 
 while [ $v -ne 101 ];
 do
-    if  [[ $(($v%5)) = 0 && $((v%3)) = 0 ]];
+    if  [[ $(($v%15)) = 0 ]];
     then echo "FizzBuzz"
     elif [ $((v%3)) = 0 ];
     then echo "Fizz"
