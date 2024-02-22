@@ -1,0 +1,8 @@
+#!/bin/bash
+# read etc/passwd
+
+passwd_file="/etc/passwd"
+
+while IFS=: read -r username _ userid _ _ _ home_directory _; do
+    echo "$username:$userid:$home_directory"
+done < "$passwd_file"
