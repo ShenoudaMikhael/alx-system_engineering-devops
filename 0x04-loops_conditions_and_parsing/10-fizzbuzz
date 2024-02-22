@@ -4,13 +4,13 @@ v=1;
 while [ $v -lt 101 ]
 do
     if [ $(($v%15)) = 0 ]
-    then 
+    then
         echo "FizzBuzz"
     elif [ $((v%3)) = 0 ]
-    then 
+    then
         echo "Fizz"
     elif  [ $((v%5)) = 0 ]
-    then 
+    then
         echo "Buzz"
     else
         echo "$v"
