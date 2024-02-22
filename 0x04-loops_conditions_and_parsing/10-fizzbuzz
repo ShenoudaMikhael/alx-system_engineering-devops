@@ -3,7 +3,7 @@
 v=1;
 while [ $v -lt 101 ]
 do
-    if  [[ $(($v%15)) = 0 ]]
+    if [ $(($v%15)) = 0 ]
     then 
         echo "FizzBuzz"
     elif [ $((v%3)) = 0 ]
@@ -13,7 +13,7 @@ do
     then 
         echo "Buzz"
     else
-        echo "$v";
+        echo "$v"
     fi;
-    ((v++));
+    ((v++))
 done;
