@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # echo Best fizbuz 100 times
 v=1;
+
 while [ $v -ne 101 ];
 do
     if  (( $v % 5 == 0 && $v % 3 == 0 ));
