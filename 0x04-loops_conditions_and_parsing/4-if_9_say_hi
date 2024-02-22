@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # echo Best schol 10 times
 v=0;
-until [ $v -eq 10 ];
+while [ $v -ne 10 ];
 do
     if [ $v -eq 9 ];
     then
