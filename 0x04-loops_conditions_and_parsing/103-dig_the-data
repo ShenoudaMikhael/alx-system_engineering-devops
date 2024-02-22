@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # read etc/passwd
 
-awk '{print  $1 , $9}' "apache-access.log" |  uniq -c | sort -nr
+awk '{print  $1 , $9}' "apache-access.log" | sort | uniq -c | sort -nr
