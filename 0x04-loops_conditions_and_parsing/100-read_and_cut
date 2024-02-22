@@ -3,6 +3,6 @@
 
 passwd_file="/etc/passwd"
 
-while IFS=: read -r username _ userid _ _ _ home_directory _; do
-    echo "$username:$userid:$home_directory"
+while IFS=: read -r item ; do
+    echo "$item" | cut -d':' --fields=1,3,6
 done < "$passwd_file"
