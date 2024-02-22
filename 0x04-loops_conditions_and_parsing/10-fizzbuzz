@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 # echo Best fizbuz 100 times
 v=1;
-
 while [ $v -lt 101 ];
 do
-    if  [[ $(($v%15)) = 0 ]];
+    if  [[ $(($v%15)) = 0 ]]
     then 
         echo "FizzBuzz"
-    elif [ $((v%3)) = 0 ];
+    elif [ $((v%3)) = 0 ]
     then 
         echo "Fizz"
-    elif  [ $((v%5)) = 0 ];
+    elif  [ $((v%5)) = 0 ]
     then 
         echo "Buzz"
     else
         echo "$v";
     fi;
-    $((v++));
+    ((v++));
 done;
