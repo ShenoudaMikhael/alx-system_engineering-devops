@@ -14,7 +14,7 @@ do
     then 
         echo "Buzz"
     else
-        echo $v;
+        echo "$v";
     fi;
     ((v++));
 done;
