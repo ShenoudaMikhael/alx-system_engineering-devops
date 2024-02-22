@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# echo Best schol 10 times
+# echo Best fizbuz 100 times
 v=1;
 while [ $v -ne 101 ];
 do
