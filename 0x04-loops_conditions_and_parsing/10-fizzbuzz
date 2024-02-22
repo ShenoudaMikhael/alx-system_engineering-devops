@@ -2,7 +2,7 @@
 # echo Best fizbuz 100 times
 v=1;
 
-while [ $v -ne 101 ];
+while [ $v -lt 101 ];
 do
     if  [[ $(($v%15)) = 0 ]];
     then 
