@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # read etc/passwd
 
 passwd_file="/etc/passwd"
