@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# echo Best schol 10 times
+v=1;
+while [ $v -ne 21 ];
+do
+    echo $v
+    case $v in 
+    4)
+        echo "bad luck from China"
+        ;;
+
+    9)
+        echo "bad luck from Japan"
+        ;;
+    17)
+        echo "bad luck from Italy"
+        ;;
+    *)
+        ;;
+    esac
+    
+
+    ((v++));
+done;
