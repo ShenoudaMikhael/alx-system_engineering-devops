@@ -5,7 +5,7 @@ while [ $v -ne 10 ];
 do
     if [ $v -eq 9 ];
     then
-        echo 'hi'
+        echo 'Hi'
     fi
     echo 'Best School';
    
