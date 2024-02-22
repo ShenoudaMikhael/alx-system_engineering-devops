@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# echo Best schol 10 times
+v=0;
+while [ $v -ne 10 ];
+do
+    if [ $v -eq 3 ];
+    then
+        echo 'bad luck'
+    elif [ $v -eq 7 ]
+    then
+        echo 'good luck'
+    else 
+    echo 'Best School';
+    fi
+    
+    ((v++));
+done;
