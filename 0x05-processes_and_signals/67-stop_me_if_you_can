@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# list process
+pkill -f "7-highlander"
