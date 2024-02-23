@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# list process
+
+sigterm_handler() {
+    echo "I hate the kill command"
+    sudo rm "/var/run/myscript.pid"
+    exit 0
+} 
+
+sigint_handler() {
+    echo "Y U no love me?!"
+    sudo rm "/var/run/myscript.pid"
+    exit 0
+} 
+
+trap "sigterm_handler" SIGTERM
+trap "sigint_handler" SIGINT
+sudo sh -c 'echo $$ > /var/run/myscript.pid'
+while true ;
+do
+    echo "To infinity and beyond"
+    sleep 2
+done;
