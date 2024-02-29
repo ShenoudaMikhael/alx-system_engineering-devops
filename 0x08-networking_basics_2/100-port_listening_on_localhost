@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# listen to telnet on posrt 98
+
+nc -l 98
