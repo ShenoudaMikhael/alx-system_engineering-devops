@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script that displays listening ports
+ping $1 -c 5
