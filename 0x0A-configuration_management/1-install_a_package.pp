@@ -1,5 +1,5 @@
 # 1. Install flask 2.1.0 package 
-package { 'wrkzeug':
+package { 'werkzeug':
   ensure   => '2.1.1',
   provider => 'pip3',
 }
