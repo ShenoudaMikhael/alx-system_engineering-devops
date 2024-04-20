@@ -1,5 +1,5 @@
 Host myshost
-    HostName localhost
+    HostName 34.201.165.130
     User ubuntu
     PasswordAuthentication no
     IdentityFile ~/.ssh/school
