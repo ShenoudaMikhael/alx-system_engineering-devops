@@ -1,0 +1,5 @@
+Host myshost
+    HostName localhost
+    User ubuntu
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
