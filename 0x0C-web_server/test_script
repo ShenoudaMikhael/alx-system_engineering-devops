@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-scp -i $4 ~/text $3@$2:$1
+scp -i $4 $1 $3@$2:$1
