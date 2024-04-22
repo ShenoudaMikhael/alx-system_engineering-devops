@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+apt-get update
+apt-get install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html 
+curl localhost:80
