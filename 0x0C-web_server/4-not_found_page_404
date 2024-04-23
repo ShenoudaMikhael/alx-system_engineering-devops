@@ -2,22 +2,18 @@
 #  4. Not found page 404 
 
 sudo apt-get update
-sudo apt-get -y install nginx 
+sudo apt-get -y install nginx
+sudo chown -R "$USER":"$USER" /var/www/html/
+echo 'Hello World!' > /var/www/html/index.html
+sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/
+redirect="\\\trewrite ^/redirect_me https://TheDreamCatcher permanent;"
+sudo sed -i "26i $redirect" /etc/nginx/sites-available/default
 
-# sudo sed -i "s/#error_page 404 /q404.html/error_page 404 /q404.html/" /etc/nginx/sites-enabled/default
-# echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/q404.html
-# sudo service nginx restart
-
-
-
-echo "Hello World!" | sudo tee /var/www/html/index.html
-sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://thedreamcatcher.dev permanent;" /etc/nginx/sites-available/default
-
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/q404.html
-
-sudo sed -i '4i error_page 404 /q404.html;\nlocation = /q404.html {\nroot /usr/share/nginx/html; \ninternal;\n}\n' /etc/nginx/sites-available/default
-
-sudo service nginx reload
-
-
-
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
+line="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sudo sed -i "27i $line" /etc/nginx/sites-available/default
+if [[ $(pgrep nginx) ]]; then
+    sudo nginx -s reload
+else
+    sudo service nginx start
+fi
