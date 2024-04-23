@@ -3,8 +3,21 @@
 
 sudo apt-get update
 sudo apt-get -y install nginx 
-sudo service nginx start
 
-sudo sed -i "s/#error_page 404 /404.html/error_page 404 /404.html/" /etc/nginx/sites-enabled/default
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-sudo service nginx restart
+# sudo sed -i "s/#error_page 404 /q404.html/error_page 404 /q404.html/" /etc/nginx/sites-enabled/default
+# echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/q404.html
+# sudo service nginx restart
+
+
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://thedreamcatcher.dev permanent;" /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/q404.html
+
+sudo sed -i '4i error_page 404 /q404.html;\nlocation = /q404.html {\nroot /usr/share/nginx/html; \ninternal;\n}\n' /etc/nginx/sites-available/default
+
+sudo service nginx reload
+
+
+
