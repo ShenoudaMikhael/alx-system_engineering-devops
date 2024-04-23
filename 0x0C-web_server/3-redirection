@@ -6,5 +6,5 @@ sudo chmod -R 755 /var/www
 sudo chown -R $USER:$USER /var/www/html
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/server_name _;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
