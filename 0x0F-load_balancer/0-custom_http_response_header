@@ -11,7 +11,7 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 
 hostname_short=$(hostname -s)
-scho "server {
+echo "server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	root /var/www/html;
