@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#   3. Redirection
+# 0. Double the number of webservers 
 
 hostname_short=$(hostname -s)
 sudo sed -i "/server_name _;/a add_header X-Served-By $hostname_short;" /etc/nginx/sites-available/default
