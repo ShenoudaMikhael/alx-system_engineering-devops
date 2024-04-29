@@ -1,0 +1,7 @@
+backend web-backend
+    balance roundrobin
+    server web1 web1.yourdomain.com:80 check
+    server web2 web2.yourdomain.com:80 check
+
+
+

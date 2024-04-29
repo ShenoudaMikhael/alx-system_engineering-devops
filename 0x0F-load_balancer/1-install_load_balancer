@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+sudo apt update
+sudo apt-get  install  -y --no-install-recommends software-properties-common 
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.9 
+sudo apt-get install -y haproxy=2.9.\*
+
+sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.orig
+
+echo '
+frontend thedreamcatcher.tech
+        bind 0:80
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 530990-web-01 34.201.165.130:80
+        server 530990-web-02 34.224.62.173:80
+' | sudo tee /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
