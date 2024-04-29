@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#   3. Redirection
+
+hostname_short=$(hostname -s)
+sudo sed -i "/server_name _;/a add_header X-Served-By $hostname_short;" /etc/nginx/sites-available/default
+sudo service nginx restart
