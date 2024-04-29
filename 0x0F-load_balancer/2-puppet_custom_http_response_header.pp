@@ -1,13 +1,11 @@
 #  2. Add a custom HTTP header with Puppet 
 class nginx_setup {
   
-  exec {'apt_update':
-    command => '/usr/bin/apt-get update',
+  exec {'sudo apt update':
+    path    => ['/usr/bin', '/usr/sbin',];
   }
-
-  package { 'nginx':
-    ensure => installed,
-    before => File['/etc/nginx/sites-available/default'],
+  exec {'sudo apt install -y nginx':
+    path    => ['/usr/bin', '/usr/sbin',];
   }
 
   file_line { 'http_header':
@@ -15,8 +13,8 @@ class nginx_setup {
     match => 'http {',
     line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
   }
-  exec {'start_service':
-    command => '/usr/sbin/service nginx start',
+  exec {'service nginx restart':
+    path  => ['/usr/bin', '/usr/sbin',]
   }
 
 
@@ -25,3 +23,4 @@ class nginx_setup {
 
 # Kame Hame HAAAAAAAAAAAAAAAAAAA
 include nginx_setup
+
