@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+get_a_record() {
+    domain=$1
+    subdomain=$2
+
+    if [ -z "$subdomain" ]; then
+        subdomains=("www" "lb-01" "web-01" "web-02")
+    else
+        subdomains=("$subdomain")
+    fi
+
+    for subd in "${subdomains[@]}"; do
+        dig_result=$(dig +short A "$subd"."$domain")
+        if [ -n "$dig_result" ]; then
+            echo "The subdomain $subd is an A record and points to $dig_result"
+        fi
+    done
+}
+
+get_a_record "$1" "$2"
