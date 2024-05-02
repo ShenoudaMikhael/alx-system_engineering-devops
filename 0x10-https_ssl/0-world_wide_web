@@ -12,10 +12,8 @@ get_a_record() {
 
     for subd in "${subdomains[@]}"; do
         dig_result=$(dig +short A "$subd"."$domain")
-        if [ -n "$dig_result" ]; then
-           echo "$subd $dig_result"| awk '{print "The subdomain " $1 " is an A record and points to " $2}'
+        echo "$subd $dig_result"| awk '{print "The subdomain " $1 " is an A record and points to " $2}'
             # echo "The subdomain $subd is an A record and points to $dig_result"
-        fi
     done
 }
 
