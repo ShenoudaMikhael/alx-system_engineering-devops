@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#  1. Make it sweet and short 
+sudo ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+sudo nginx
+sudo kill "$(pgrep nginx | head -1)"
