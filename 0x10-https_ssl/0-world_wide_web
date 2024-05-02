@@ -11,7 +11,7 @@ get_a_record() {
     fi
 
     for subd in "${subdomains[@]}"; do
-        dig "$subd"."$domain" | awk '/;; ANSWER SECTION:/ {getline; print "The subdomain'"$2"' is a " $4 " record and points to " $5}'
+        dig "$subd"."$domain" | awk '/;; ANSWER SECTION:/ {getline; print "The subdomain '"$subd"' is a " $4 " record and points to " $5}'
     done
 }
 
