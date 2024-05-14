@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# SQL Dump
+
+
+
+ARCHIVE_NAME="$(date +'%d-%m-%Y').tar.gz"
+MYSQL_DUMP_CMD="mysqldump -u root -p'$1' --all-databases > backup.sql"
+tar -czf "$ARCHIVE_NAME" "$MYSQL_DUMP_FILE"
+echo "Backup created successfully: $ARCHIVE_NAME"
