@@ -2,4 +2,4 @@
 # SQL Dump
 ARCHIVE_NAME="$(date '+%d-%m-%Y').tar.gz"
 MYSQL_DUMP_CMD="mysqldump -u root -p'$1' --all-databases > backup.sql"
-tar -czf "$ARCHIVE_NAME" "backup.sql"
+tar -czvf "$ARCHIVE_NAME" "backup.sql"
