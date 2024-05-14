@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # change nginx user
-sudo service apache2 stop
 sudo pkill apache2
 sed -i '/Listen 8080/d' /etc/apache2/sites-enabled/000-default.conf
 sudo service nginx stop
 sudo sed -i '/listen 80 default_server;/a\\tlisten 8080;' /etc/nginx/sites-available/default
+chown -R nginx /etc/nginx
+chmod 770 /etc/nginx/nginx.conf
 sudo -H -u nginx bash -c 'service nginx start'
