@@ -1,0 +1,37 @@
+-- web1 and web2
+CREATE USER IF NOT EXISTS 'holberton_user' @'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+GRANT ALL PRIVILEGES ON *.* TO 'holberton_user' @'localhost';
+FLUSH PRIVILEGES;
+
+
+
+CREATE DATABASE IF NOT EXISTS tyrell_corp;
+USE `tyrell_corp`;
+CREATE TABLE IF NOT EXISTS `nexus6` (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(256) NOT NULL
+);
+GRANT SELECT on `tyrell_corp`.* TO 'holberton_user'@'localhost';
+
+-- web1 only
+INSERT INTO nexus6 (name) VALUES ( 'Shenouda');
+
+
+
+CREATE USER IF NOT EXISTS 'replica_user'@'%' IDENTIFIED BY 'P@ssw0rd'
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+FLUSH PRIVILEGES;
+
+sudo ufw allow from 34.224.62.173 to any port 3306
+
+
+acme.sh --renew --server letsencrypt --dns -d 'thedreamcatcher.dev' -d '*.thedreamcatcher.dev' -w ~/public_html --yes-I-know-dns-manual-mode-enough-go-ahead-please
+
+
+CHANGE REPLICATION SOURCE TO
+SOURCE_HOST='34.201.165.130',
+SOURCE_USER='replica_user',
+SOURCE_PASSWORD='P@ssw0rd',
+SOURCE_LOG_FILE='mysql-bin.000001',
+SOURCE_LOG_POS=154;
+
