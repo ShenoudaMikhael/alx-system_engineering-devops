@@ -6,7 +6,7 @@ import urllib.request
 import urllib.response
 
 
-def get():
+if __name__ == "__main__":
     with urllib.request.urlopen(
         "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
                                 ) as resp:
@@ -25,7 +25,3 @@ def get():
         )
         for i in completed:
             print("\t {}".format(i["title"]))
-
-
-if __name__ == "__main__":
-    get()
