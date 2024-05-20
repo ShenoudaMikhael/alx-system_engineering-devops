@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Gather Data Module"""
+import json
 from sys import argv
 import urllib.request
 import urllib.response
-import json
 
 with urllib.request.urlopen(
     "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
