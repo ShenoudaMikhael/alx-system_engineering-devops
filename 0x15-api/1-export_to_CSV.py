@@ -17,13 +17,12 @@ if __name__ == "__main__":
         data = json.loads(response.read())
         q = [i for i in data if i["userId"] == int(argv[1])]
         # completed = [i for i in q if i["completed"] is True]
-        
         with open("{}.csv".format(argv[1]), "w") as f:
             for i in q:
                 f.write(
                     '"{}","{}","{}","{}"\n'.format(
                         argv[1],
-                        user["name"],
+                        user["username"],
                         i["completed"],
                         i["title"],
                         )
