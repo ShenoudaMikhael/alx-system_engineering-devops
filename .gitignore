@@ -2,3 +2,4 @@
 0x04-loops_conditions_and_parsing/password
 0x04-loops_conditions_and_parsing/school
 0x16-api_advanced/__pycache__/0-subs.cpython-312.pyc
+*.pyc
