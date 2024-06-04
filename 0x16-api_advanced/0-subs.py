@@ -6,7 +6,7 @@ import requests
 def number_of_subscribers(subreddit):
     """numbeer of subs"""
     try:
-        headers = {"User-Agent": "user_agent"}
+        headers = {"User-Agent": "/u/ALX"}
         with requests.get(
             "https://www.reddit.com/r/{}/about.json".format(subreddit),
             timeout=30,
