@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kill gracefulyy gunicorn and start again
+pkill -HUP gunicorn
