@@ -10,7 +10,7 @@ fi
 echo "Gracefully reloading Gunicorn..."
 
 # Send the HUP signal to the master process to reload configuration and code
-kill -HUP "$GUNICORN_PID"
+sudo kill -HUP "$GUNICORN_PID"
 
 # Wait for a few seconds to give Gunicorn time to reload
 sleep 5
