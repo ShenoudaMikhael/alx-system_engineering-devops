@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # kill gracefulyy gunicorn and start again
 sudo supervisorctl status gunicorn | sed "s/.*[pid ]\([0-9]\+\)\,.*/\1/" | xargs kill -HUP
-echo "OK"
+echo "OK\n"
